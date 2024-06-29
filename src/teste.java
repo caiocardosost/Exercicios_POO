@@ -1,14 +1,11 @@
 public class teste {
     public static void main(String[] args) {
-        //char c = 'a';
-        //int i = ('z' - 'a');
+        char c = 'v';
+        int i = ('z' - 'w');
         //int pos = (i+1)%26;
         //int en = 'a' + pos;
-        //System.out.printf("%c e %c e %d", c, c+25, en);
-        String c = "caio";
-        char[] d = c.toCharArray();
-        String e = new String(d);
-        System.out.println(d[0] + " " + e);
+        System.out.printf("%c e %c e %d", c, c-4, i);
+        
 
     }
 }

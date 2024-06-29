@@ -45,7 +45,17 @@ public class atv00 {
     }
 
     public static String decrypt(String encryptedMessage, int key) {
-        return "";
+        char[] m = encryptedMessage.toCharArray();
+        int dif, pos, enc;
+        for(int i=0; i<encryptedMessage.length(); i++){
+            dif = 'z' - m[i];
+            pos = (dif+key)%26;
+            enc = 'z'- pos;
+            m[i] = (char) enc;
+        }
+        String res = new String(m);
+
+        return res;
     }
     
     public static void main(String[] args) throws Exception {
@@ -53,6 +63,6 @@ public class atv00 {
         System.out.printf("%.6f \n", sqrt(2.0, 0.001));
         System.out.println("O numero 6 "+ (isPerfectNumber(6) ? "eh ":"nao eh ") + "perfeito");
         System.out.println("Caio encriptografado com k = 1 eh: " + encrypt("caio", 1));
-        
+        System.out.println("Desencriptografado com k = 1 eh: " + decrypt("dbjp", 1));
     }
 }
