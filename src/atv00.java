@@ -16,6 +16,17 @@ public class atv00 {
     }
 
     public static boolean isPerfectNumber(long number) {
+        if (number > 1){
+            long sum = 1;
+            for (long i = 2; i<=(number/2); i++){
+                if((number%i) == 0){
+                    sum = sum + i;
+                }
+            }
+            if (sum == number){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -30,5 +41,7 @@ public class atv00 {
     public static void main(String[] args) throws Exception {
         System.out.print("A raiz quadrada de 2 com precisao de 0.001 eh: ");
         System.out.printf("%.6f \n", sqrt(2.0, 0.001));
+        System.out.println("O numero 6 "+ (isPerfectNumber(6) ? "eh ":"nao eh ") + "perfeito");
+        
     }
 }
