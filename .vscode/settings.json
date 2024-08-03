@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "atv 03",
         "atv 02",
         "atv 01",
-        "atv 03"
+        "atv 04"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
