@@ -106,6 +106,35 @@ public class Matrix {
         Matrix res = new Matrix(mul);
         return res;
     }
+
+    public Matrix getTranspose (){
+        double[][] tr = new double[cells[0].length][cells.length];
+        for (int i = 0; i < cells[0].length; i++){
+            for(int j = 0; j < cells.length; j++){
+                tr[i][j] = cells[j][i];
+            }
+        }
+        Matrix res = new Matrix(tr);
+        return res;
+    }
+
+    public boolean isSquare(){
+        return cells.length == cells[0].length;
+    }
+
+    public boolean isSymmetric (){
+        if(!isSquare()){
+            return false;
+        }
+        for (int i = 0; i < cells.length; i++){
+            for(int j = 0; j < cells[0].length; j++){
+                if (cells[i][j] != cells[j][i]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
 
 

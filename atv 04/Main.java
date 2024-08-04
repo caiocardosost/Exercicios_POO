@@ -128,19 +128,75 @@ public class Main {
         System.out.println(a.times(c));
         //System.out.println("Matriz cxa: (INCOMPATIVEIS) ");
         //System.out.println(c.times(a));
+    }
 
+    public static void testTranspose(){
+        Matrix a = new Matrix(new double[][]{
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        });
+        Matrix b = new Matrix(new double[][]{
+            {12, 10, 8},
+            {7, 6, 5},
+            {4, 3, 2}
+        });
+        System.out.println("Matriz a: ");
+        System.out.println(a);
+        System.out.println("Matriz a transposta: ");
+        System.out.println(a.getTranspose());
+        System.out.println("Matriz b: ");
+        System.out.println(b);
+        System.out.println("Matriz b transposta: ");
+        System.out.println(b.getTranspose());
+    }
 
+    public static void tesIsSquare(){
+        Matrix a = new Matrix(new double[][]{
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        });
+        Matrix b = new Matrix(new double[][]{
+            {4, 8, 12, 6},
+            {3, 6, 9, 8},
+            {1, 2, 3, 5}
+        });
+        System.out.println("Matriz a: ");
+        System.out.println(a);
+        System.out.println("Matriz a eh quadrada? " + a.isSquare());
+        System.out.println("Matriz b: ");
+        System.out.println(b);
+        System.out.println("Matriz b eh quadrada? " + b.isSquare());
+        
+    }
+
+    public static void testIsSymmetric(){
+        Matrix a = new Matrix(new double[][]{
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        });
+        Matrix b = new Matrix(new double[][]{
+            {1, 0, 0},
+            {0, 1, 0},
+            {0, 0, 1}
+        });
+        System.out.println("Matriz a: ");
+        System.out.println(a);
+        System.out.println("Matriz a eh simetrica? " + a.isSymmetric());
+        System.out.println("Matriz b: ");
+        System.out.println(b);
+        System.out.println("Matriz b eh simetrica? " + b.isSymmetric());
     }
     public static void main(String[] args) {
         //testToString();
         //testToArray();
         //testRowColumnsGetAt();
         //testPlusMinus();
-        testTimes();
-        
-        // System.out.println(a.isSquare());
-        // System.out.println(b.isSymmetric());
-        // System.out.println(a.getTranspose());
-
+        //testTimes();
+        //testTranspose();
+        //tesIsSquare();
+        testIsSymmetric();
     }
 }
