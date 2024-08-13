@@ -1,9 +1,9 @@
 package main;
 
 /**
- * Point class.
+ * Classe que modela um ponto 2D.
  */
-public class Ponto extends ObjetoGeometrico {
+public final class Ponto extends ObjetoGeometrico {
     private double coordX;
     private double coordY;
 

@@ -1,12 +1,14 @@
 {
     "java.project.sourcePaths": [
+        "atv 05/main",
+        "atv 05",
+        "atv 04",
         "atv 03",
         "atv 02",
         "atv 01",
-        "atv 04"
+        "atv05"
     ],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+    "java.project.referencedLibraries": [],
+    "java.dependency.packagePresentation": "hierarchical"
 }
