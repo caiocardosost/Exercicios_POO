@@ -1,9 +1,5 @@
 package main;
 
-/**
- * Classe que modela um Segmento de reta
- */
-
 public final class SegmentoReta extends ObjetoGeometrico {
     private final Ponto p1;
     private final Ponto p2;
@@ -21,11 +17,7 @@ public final class SegmentoReta extends ObjetoGeometrico {
         return p2;
     }
 
-    /**
-     * Calcula a distancia entre dois pontos
-     * @return d A distancia entre p1 e p2
-     */
-
+    
     public double comprimento() {
         double d = Math.sqrt(Math.pow(p2.getCoordX() - p1.getCoordX(),2)
             + Math.pow(p2.getCoordY()-p1.getCoordY(), 2));
@@ -38,6 +30,11 @@ public final class SegmentoReta extends ObjetoGeometrico {
         }
         return (p2.getCoordY() - p1.getCoordY())
             / (p2.getCoordX() - p1.getCoordX());
+    }
+
+    public boolean paralelo(SegmentoReta s){
+        double e = 1e-10;
+        return Math.abs (coeficienteAngular() - s.coeficienteAngular()) <= e;
     }
 
 }
