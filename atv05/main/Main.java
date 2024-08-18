@@ -35,10 +35,10 @@ public class Main {
     public static void testeTrapezio(){
         Ponto[] pontos = new Ponto[4];
 
-        pontos [0] = new Ponto(0.4, 0.8);
-        pontos [1] = new Ponto(0.6, 0.8);
-        pontos [2] = new Ponto(0.2, 0.4);
-        pontos [3] = new Ponto(0.8, 0.4);
+        pontos [0] = new Ponto(0.25, 1.0);
+        pontos [1] = new Ponto(0.75, 1.0);
+        pontos [2] = new Ponto(1.0, 0.0);
+        pontos [3] = new Ponto(0.0, 0.0);
 
         Trapezio t = new Trapezio(pontos[0], pontos[1], pontos[2], pontos[3]);
 
