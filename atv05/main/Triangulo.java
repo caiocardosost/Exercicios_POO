@@ -9,20 +9,20 @@ public final class Triangulo extends Poligono {
     
     
     @Override
-    protected double altura() {
+    public double altura() {
         return (2*area()/largura());
     }
 
     @Override
-    protected double largura() {
-        return (new SegmentoReta(pontos.get(1), pontos.get(2)).comprimento());
+    public double largura() {
+        return (new SegmentoReta(getP2(), getP3()).comprimento());
     }
 
     @Override
-    protected double area() {
-        SegmentoReta AB = new SegmentoReta(pontos.get(0), pontos.get(1));
-        SegmentoReta BC = new SegmentoReta(pontos.get(1), pontos.get(2));
-        SegmentoReta AC = new SegmentoReta(pontos.get(0), pontos.get(2));
+    public double area() {
+        SegmentoReta AB = new SegmentoReta(getP1(), getP2());
+        SegmentoReta BC = new SegmentoReta(getP2(), getP3());
+        SegmentoReta AC = new SegmentoReta(getP1(), getP3());
 
         double a = AB.comprimento();
         double b = BC.comprimento();
@@ -33,9 +33,21 @@ public final class Triangulo extends Poligono {
     }
     
     @Override
-    protected double perimetro() {
-        return new SegmentoReta(pontos.get(0), pontos.get(1)).comprimento() 
-            +  new SegmentoReta(pontos.get(1), pontos.get(2)).comprimento() 
-            +  new SegmentoReta(pontos.get(2), pontos.get(0)).comprimento();
+    public double perimetro() {
+        return new SegmentoReta(getP1(), getP2()).comprimento() 
+            +  new SegmentoReta(getP2(), getP3()).comprimento() 
+            +  new SegmentoReta(getP3(), getP1()).comprimento();
+    }
+    
+    public Ponto getP1(){
+        return pontos.get(0);
+    }
+
+    public Ponto getP2(){
+        return pontos.get(1);
+    }
+
+    public Ponto getP3(){
+        return pontos.get(2);
     }
 }

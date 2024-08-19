@@ -12,7 +12,7 @@ public abstract class Poligono extends FormaGeometrica {
         }
     }
 
-    protected Ponto[] getPontos() {
+    public Ponto[] getPontos() {
         Ponto[] copia = new Ponto[pontos.size()];
         int i = 0;
         for(Ponto ponto : pontos){

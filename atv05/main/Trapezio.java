@@ -4,20 +4,17 @@ public class Trapezio extends Quadrilatero {
     
 
     public Trapezio(Ponto p1, Ponto p2, Ponto p3, Ponto p4){
-        super (p1, p2, p3, p4);
-        if(!existe(p1, p2, p3, p4)){
-            throw new IllegalArgumentException("pontos incompativeis");
-        }                
+        super (p1, p2, p3, p4);                       
     }
 
-    protected SegmentoReta baseMenor(){
+    public SegmentoReta baseMenor(){
          if (s1.comprimento() <= s3.comprimento()){
             return s1;
          }
          return s3;
     }
 
-    protected SegmentoReta baseMaior(){
+    public SegmentoReta baseMaior(){
         if (s1.comprimento() > s3.comprimento()){
            return s1;
         }
@@ -25,7 +22,7 @@ public class Trapezio extends Quadrilatero {
    }
     
     @Override
-    protected double altura() {
+    public double altura() {
         
         double a = s4.comprimento();
         double b = s2.comprimento();
@@ -37,26 +34,28 @@ public class Trapezio extends Quadrilatero {
     }
 
     @Override
-    protected double area() {
+    public double area() {
         
         return ((baseMaior().comprimento() + baseMenor().comprimento())*altura())/2;
     }
 
     @Override
-    protected double largura() {
+    public double largura() {
         return baseMaior().comprimento();
     }
 
     @Override
-    protected double perimetro() {
+    public double perimetro() {
         return s1.comprimento() + s2.comprimento() + s3.comprimento() + s4.comprimento();
     }
 
-    protected static boolean existe(Ponto p1, Ponto p2, Ponto p3, Ponto p4){
+    public static boolean existe(Ponto p1, Ponto p2, Ponto p3, Ponto p4){
         SegmentoReta s1 = new SegmentoReta(p1, p2);
-        SegmentoReta s2 = new SegmentoReta(p3, p4);
+        SegmentoReta s2 = new SegmentoReta(p2, p3);
+        SegmentoReta s3 = new SegmentoReta(p3, p4);
+        SegmentoReta s4 = new SegmentoReta(p4, p1);
 
-        if (s1.paralelo(s2)){
+        if (s1.paralelo(s3) && !(s2.paralelo(s4))){
             return true;
         }
         return false;

@@ -8,9 +8,25 @@ public abstract class Quadrilatero extends Poligono {
     
     public Quadrilatero(Ponto p1, Ponto p2, Ponto p3, Ponto p4) {
         super(new Ponto[] {p1,p2,p3,p4});
-        s1 = new SegmentoReta(pontos.get(0), pontos.get(1)); 
-        s2 = new SegmentoReta(pontos.get(1), pontos.get(2)); 
-        s3 = new SegmentoReta(pontos.get(2), pontos.get(3));
-        s4 = new SegmentoReta(pontos.get(3), pontos.get(0));        
-    }    
+        s1 = new SegmentoReta(getP1(), getP2()); 
+        s2 = new SegmentoReta(getP2(), getP3()); 
+        s3 = new SegmentoReta(getP3(), getP4());
+        s4 = new SegmentoReta(getP4(), getP1());        
+    }
+    
+    public Ponto getP1(){
+        return pontos.get(0);
+    }
+
+    public Ponto getP2(){
+        return pontos.get(1);
+    }
+
+    public Ponto getP3(){
+        return pontos.get(2);
+    }
+
+    public Ponto getP4(){
+        return pontos.get(3);
+    }
 }
