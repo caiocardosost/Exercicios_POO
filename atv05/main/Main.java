@@ -58,12 +58,14 @@ public class Main {
     public static void testeParalelogramo(){
         Ponto[] pontos = new Ponto[4];
 
-        pontos [0] = new Ponto(0.0, 1.0);
-        pontos [1] = new Ponto(0.7, 1.0);
-        pontos [2] = new Ponto(1.0, 0.0);
-        pontos [3] = new Ponto(0.3, 0.0);
+        pontos [0] = new Ponto(0.648498, 0.911971);
+        pontos [1] = new Ponto(0.902942, 0.911971);
+        pontos [2] = new Ponto(0.947839, 0.868310);
+        pontos [3] = new Ponto(0.693394, 0.868310);
 
         Paralelogramo p = new Paralelogramo(pontos[0], pontos[1], pontos[2], pontos[3]);
+
+        System.out.println(Paralelogramo.existe(pontos[0], pontos[1], pontos[2], pontos[3]));
 
         System.out.println((new SegmentoReta(p.getPontos()[0],p.getPontos()[1])).comprimento());
         System.out.println((new SegmentoReta(p.getPontos()[1],p.getPontos()[2])).comprimento());
@@ -86,10 +88,10 @@ public class Main {
         // pontos [2] = new Ponto(1.0, 0.0);
         // pontos [3] = new Ponto(0.3, 0.0);
 
-        pontos [0] = new Ponto(0.0, 0.5);
-        pontos [1] = new Ponto(1.0, 0.5);
-        pontos [2] = new Ponto(1.0, 0.0);
-        pontos [3] = new Ponto(0.0, 0.0);
+        pontos [0] = new Ponto(0.127604, 0.589758);
+        pontos [1] = new Ponto(0.233600, 0.589758);
+        pontos [2] = new Ponto(0.233600, 0.483761);
+        pontos [3] = new Ponto(0.127604, 0.483761);
         
         System.out.println(Retangulo.existe(pontos[0], pontos[1], pontos[2], pontos[3]));
         Retangulo r = new Retangulo (pontos[0], pontos[1], pontos[2], pontos[3]);
@@ -110,8 +112,8 @@ public class Main {
     }
 
     public static void testeElipse(){
-        Ponto p = new Ponto(0.0,0.0);
-        Elipse e = new Elipse(p, 0.5, 1.0);
+        Ponto p = new Ponto(0.079606, 0.342654);
+        Elipse e = new Elipse(p, 0.064747, 0.221081);
         // pontos [0] = new Ponto(0.0, 1.0);
         // pontos [1] = new Ponto(0.7, 1.0);
         // pontos [2] = new Ponto(1.0, 0.0);
@@ -179,11 +181,11 @@ public class Main {
         // testeSegReta(pontos);
         // testeTriangulo(pontos);
         // testeTrapezio();
-        // testeParalelogramo();
+        testeParalelogramo();
         // testeRetangulo();
         // testeElipse();
         // testeCirculo();
-        testeSemiCirculo();
+        //testeSemiCirculo();
         
         
     }

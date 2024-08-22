@@ -35,13 +35,18 @@ public final class SegmentoReta extends ObjetoGeometrico {
     public boolean paralelo(SegmentoReta s){
         double a = coeficienteAngular();
         double b = s.coeficienteAngular();
-        double e = 1e-10;
+        double e;
+        if (a > 1.0 || a < -1.0){
+            e = 1e-2;
+        } else{
+            e = 9e-5;
+        }
         if (a == Double.POSITIVE_INFINITY || b == Double.POSITIVE_INFINITY){
             if (a == b){
                 return true;
             }
             return false;           
         }
-        return Math.abs (a-b) <= e;
+        return Math.abs (a-b) < e;
     }
 }

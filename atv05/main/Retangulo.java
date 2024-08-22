@@ -6,7 +6,7 @@ public final class Retangulo extends Paralelogramo{
     }
 
     public boolean quadrado(){
-        double e = 1e-10;
+        double e = 1e-5;
         if (Math.abs(s2.comprimento() - s3.comprimento()) <= e){
             return true;
         }

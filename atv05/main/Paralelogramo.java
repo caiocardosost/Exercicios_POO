@@ -19,7 +19,7 @@ public class Paralelogramo extends Trapezio {
 
     @Override
     public double largura() {
-        double b = getP4().getCoordX()-getP1().getCoordX();
+        double b = Math.abs(getP4().getCoordX()-getP1().getCoordX());
         return b + s3.comprimento();
     }
 

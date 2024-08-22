@@ -20,8 +20,8 @@ public class Elipse extends FormaGeometrica{
     }
 
     public double circunferencia(){
-        return 2*Math.PI*(Math.sqrt(Math.pow(getSemiEixoMaior(), 2)
-            + Math.pow(getSemiEixoMenor(), 2)/2));
+        return 2*Math.PI*(Math.sqrt((Math.pow(getSemiEixoMaior(), 2)
+            + Math.pow(getSemiEixoMenor(), 2))/2));
     }
 
     @Override
