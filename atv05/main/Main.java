@@ -42,12 +42,24 @@ public class Main {
 
         Trapezio t = new Trapezio(pontos[0], pontos[1], pontos[2], pontos[3]);
 
-        System.out.println((new SegmentoReta(t.getPontos()[0],t.getPontos()[1])).comprimento());
-        System.out.println((new SegmentoReta(t.getPontos()[1],t.getPontos()[2])).comprimento());
-        System.out.println((new SegmentoReta(t.getPontos()[2],t.getPontos()[3])).comprimento());
-        System.out.println((new SegmentoReta(t.getPontos()[3],t.getPontos()[0])).comprimento());
+        // System.out.println((new SegmentoReta(t.getPontos()[0],t.getPontos()[1])).comprimento());
+        // System.out.println((new SegmentoReta(t.getPontos()[1],t.getPontos()[2])).comprimento());
+        // System.out.println((new SegmentoReta(t.getPontos()[2],t.getPontos()[3])).comprimento());
+        // System.out.println((new SegmentoReta(t.getPontos()[3],t.getPontos()[0])).comprimento());
+        System.out.println(t.getP1());
         System.out.println();
 
+        Ponto teste;
+        teste = t.getP1();
+        System.out.println(teste);
+        teste = new Ponto(0.75, 1.0);
+        System.out.println(teste);
+        System.out.println(t.getP1());
+        
+
+
+
+        System.out.println();
         System.out.println(t.altura());
         System.out.println(t.largura());
         System.out.println(t.area());
@@ -180,8 +192,8 @@ public class Main {
 
         // testeSegReta(pontos);
         // testeTriangulo(pontos);
-        // testeTrapezio();
-        testeParalelogramo();
+        testeTrapezio();
+        // testeParalelogramo();
         // testeRetangulo();
         // testeElipse();
         // testeCirculo();
