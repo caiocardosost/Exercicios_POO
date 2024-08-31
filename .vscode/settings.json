@@ -6,7 +6,8 @@
         "atv 03",
         "atv 02",
         "atv 01",
-        "atv05"
+        "atv05",
+        "atv06"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [],
