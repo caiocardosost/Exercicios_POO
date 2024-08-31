@@ -10,7 +10,7 @@ public abstract class CompositeCircuit implements Circuit {
         }
     }
 
-    protected Circuit[] getCircuits(){
+    public Circuit[] getCircuits(){
         Circuit[] c = new Circuit[this.circuits.size()];
         int i = 0;
         for(Circuit array  : this.circuits){
